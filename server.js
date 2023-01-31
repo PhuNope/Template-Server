@@ -14,13 +14,12 @@ const __dirname = path.dirname(__filename);
 
 import { Server } from "socket.io";
 import cors from "cors";
-import connect from "./database/connect.js";
+//import connect from "./database/connect.js";
 import playerJoin from "./listeners/playerJoin.js";
 import onServer from "./listeners/onServer.js";
-import { addPlayer, list, listPlayers } from "./controllers/PlayerController.js";
 
 //Connect to DB
-connect();
+//connect();
 //init
 const app = express();
 app.use(
@@ -47,7 +46,3 @@ const onConnection = (socket) => {
 };
 
 io.on("connection", onConnection);
-
-//
-//addPlayer({ name: "Phú", content: "alooo" });
-list();
